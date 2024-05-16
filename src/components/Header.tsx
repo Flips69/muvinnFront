@@ -10,11 +10,18 @@ function Header(): React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
     header: {
-
+        backgroundColor: 'red',
+        paddingVertical: 10,
+        alignItems: 'center',
     },
     headerTitle: {
-
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: 'white'
     }
 });
 

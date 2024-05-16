@@ -1,0 +1,194 @@
+import axios from "axios";
+import React, { useState } from "react";
+import { Image, StatusBar, StyleSheet, Text, TextInput, Touchable, TouchableOpacity, View } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import Footer from "../components/Footer";
+
+function CadastroImovel(): React.JSX.Element{
+
+    const [estado, setEstado] = useState("");
+    const [cidade, setCidade] = useState("");
+    const [endereco, setEndereco] = useState("");
+    const [tipos_imoveis, setTipos_imoveis] = useState("");
+    const [preco, setPreco] = useState("");
+    const [banheiros, setBanheiros] = useState("");
+    const [quartos, setQuartos] = useState("");
+    const [vagas, setVagas] = useState("");
+    const [area_do_imovel, setArea_do_imovel] = useState("");
+
+
+    const CadastroScreen = async () => {
+        try {
+            const formData = new FormData();
+            formData.append('estado', estado);
+            formData.append('cidade', cidade);
+            formData.append('endereco', endereco);
+            formData.append('tipos_imoveis', tipos_imoveis);
+            formData.append('preco', preco);
+            formData.append('banheiros', banheiros);
+            formData.append('quartos', quartos);
+            formData.append('vagas', vagas);
+            formData.append('area_do_imovel', area_do_imovel);
+            
+
+            console.log(formData)
+            const response = await axios.post('http://10.137.11.224:8000/api/clientes', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+            console.log(response.data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    return(
+        <View style={styles.container}>
+            <ScrollView showsVerticalScrollIndicator={false}>
+            <StatusBar hidden barStyle={"light-content"} backgroundColor={"black"} />
+            <Image
+                    source={require('../assets/images/logo.png')}
+                    style={styles.logo} />
+
+            <View>
+                
+                <TextInput
+                style={styles.input} 
+                placeholder="Estado" 
+                placeholderTextColor={"#1d1e2c"} 
+                onChangeText={(texteEstado) => setEstado(texteEstado)}
+                />
+                
+                <TextInput
+                style={styles.input} 
+                placeholder="cidade" 
+                placeholderTextColor={"#1d1e2c"} 
+                onChangeText={(texteCidade) => setCidade(texteCidade)}
+                secureTextEntry
+                />
+                <TextInput
+                style={styles.input} 
+                placeholder="Endereço" 
+                placeholderTextColor={"#1d1e2c"} 
+                onChangeText={(texteEndereco) => setEndereco(texteEndereco)}
+                secureTextEntry
+                />
+                <TextInput
+                style={styles.input} 
+                placeholder="Tipo do Imóvel" 
+                placeholderTextColor={"#1d1e2c"} 
+                onChangeText={(texteTipos_imoveis) => setTipos_imoveis(texteTipos_imoveis)}
+                secureTextEntry
+                />
+                <TextInput
+                style={styles.input} 
+                placeholder="Preço" 
+                placeholderTextColor={"#1d1e2c"} 
+                onChangeText={(textePreco) => setPreco(textePreco)}
+                secureTextEntry
+                />
+                <TextInput
+                style={styles.input} 
+                placeholder="Banheiros" 
+                placeholderTextColor={"#1d1e2c"} 
+                onChangeText={(texteBanheiros) => setBanheiros(texteBanheiros)}
+                secureTextEntry
+                />
+                <TextInput
+                style={styles.input} 
+                placeholder="Quartos" 
+                placeholderTextColor={"#1d1e2c"} 
+                onChangeText={(texteQuartos) => setQuartos(texteQuartos)}
+                secureTextEntry
+                />
+                <TextInput
+                style={styles.input} 
+                placeholder="Vagas" 
+                placeholderTextColor={"#1d1e2c"} 
+                onChangeText={(texteVagas) => setVagas(texteVagas)}
+                secureTextEntry
+                />
+                <TextInput
+                style={styles.input} 
+                placeholder="Area do Imóvel" 
+                placeholderTextColor={"#1d1e2c"} 
+                onChangeText={(texteArea_do_Imovel) => setArea_do_imovel(texteArea_do_Imovel)}
+                secureTextEntry
+                />
+                </View>
+                <View>
+                    
+                <TouchableOpacity style={styles.button} 
+                onPress={()=>{CadastroScreen()}}>
+                    <Text style={styles.buttonText}>Cadastrar</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text style={styles.forgotPassword}>Cadastre-se!</Text>
+                </TouchableOpacity>
+                </View>
+            
+            </ScrollView>
+            <Footer />
+        </View>
+        
+    );
+}
+
+const styles =StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f7ebec'
+    },
+    logo: {
+        width: 300,
+        height: 300,
+        marginBottom: -120,
+        marginTop: -69
+        
+    },
+    title: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: '#151413',
+        marginBottom: 20,
+        textAlign: 'center',
+
+    },
+    input: {
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddbdd5',
+        height: 40,
+        marginBottom: 20,
+        paddingHorizontal: 10,
+        
+    },
+    button: {
+        backgroundColor: '#ac9fbb',
+        borderRadius: 8,
+        height: 40,
+
+    },
+    buttonText: {
+        color: '#1d1e2c',
+        textAlign: 'center',
+        fontSize: 16,
+        lineHeight: 40,
+       
+
+    },
+    forgotPassword: {
+        color: '#1d1e2c',
+        textAlign: 'center',
+        marginTop: 10,
+
+    },
+    footer: {
+        width: 100
+    },
+
+});
+
+export default CadastroImovel;
