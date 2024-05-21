@@ -30,7 +30,7 @@ function Footer(): React.JSX.Element {
 
 const styles = StyleSheet.create({
     footer: {
-        backgroundColor: '#9DB5B2',
+        backgroundColor: '#9999a1',
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'flex-end',

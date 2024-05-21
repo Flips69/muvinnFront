@@ -55,56 +55,56 @@ function CadastroImovel(): React.JSX.Element{
                 <TextInput
                 style={styles.input} 
                 placeholder="Estado" 
-                placeholderTextColor={"#7F6A93"} 
+                placeholderTextColor={"#f4f4f6"} 
                 onChangeText={(texteEstado) => setEstado(texteEstado)}
                 />
                 
                 <TextInput
                 style={styles.input} 
                 placeholder="Cidade" 
-                placeholderTextColor={"#7F6A93"} 
+                placeholderTextColor={"#f4f4f6"} 
                 onChangeText={(texteCidade) => setCidade(texteCidade)}
                 />
                 <TextInput
                 style={styles.input} 
                 placeholder="Endereço" 
-                placeholderTextColor={"#7F6A93"} 
+                placeholderTextColor={"#f4f4f6"} 
                 onChangeText={(texteEndereco) => setEndereco(texteEndereco)}
                 />
                 <TextInput
                 style={styles.input} 
                 placeholder="Tipo do Imóvel" 
-                placeholderTextColor={"#7F6A93"} 
+                placeholderTextColor={"#f4f4f6"} 
                 onChangeText={(texteTipos_imoveis) => setTipos_imoveis(texteTipos_imoveis)}
                 />
                 <TextInput
                 style={styles.input} 
                 placeholder="Preço" 
-                placeholderTextColor={"#7F6A93"} 
+                placeholderTextColor={"#f4f4f6"} 
                 onChangeText={(textePreco) => setPreco(textePreco)}
                 />
                 <TextInput
                 style={styles.input} 
                 placeholder="Banheiros" 
-                placeholderTextColor={"#7F6A93"} 
+                placeholderTextColor={"#f4f4f6"} 
                 onChangeText={(texteBanheiros) => setBanheiros(texteBanheiros)}
                 />
                 <TextInput
                 style={styles.input} 
                 placeholder="Quartos" 
-                placeholderTextColor={"#7F6A93"} 
+                placeholderTextColor={"#f4f4f6"} 
                 onChangeText={(texteQuartos) => setQuartos(texteQuartos)}
                 />
                 <TextInput
                 style={styles.input} 
                 placeholder="Vagas" 
-                placeholderTextColor={"#7F6A93"} 
+                placeholderTextColor={"#f4f4f6"} 
                 onChangeText={(texteVagas) => setVagas(texteVagas)}
                 />
                 <TextInput
                 style={styles.input} 
                 placeholder="Área do Imóvel" 
-                placeholderTextColor={"#7F6A93"} 
+                placeholderTextColor={"#f4f4f6"} 
                 onChangeText={(texteArea_do_Imovel) => setArea_do_imovel(texteArea_do_Imovel)}
                 />
                 </View>
@@ -129,46 +129,29 @@ const styles =StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#D3D5D4'
-    },
-    title: {
-        fontSize: 25,
-        fontWeight: 'bold',
-        color: '#151413',
-        marginBottom: 20,
-        textAlign: 'center',
-
+        backgroundColor: '#66666e'
     },
     input: {
         borderBottomWidth: 1,
-        borderBottomColor: '#A2C5AC',
+        borderBottomColor: '#e6e6e9',
         height: 40,
         marginBottom: 20,
         paddingHorizontal: 180,
         paddingLeft: 1
     },
     button: {
-        backgroundColor: '#A2C5AC',
+        backgroundColor: '#9999a1',
         borderRadius: 8,
         height: 40,
 
     },
     buttonText: {
-        color: '#1d1e2c',
+        color: '#f4f4f6',
         textAlign: 'center',
         fontSize: 16,
         lineHeight: 40,
        
 
-    },
-    forgotPassword: {
-        color: '#1d1e2c',
-        textAlign: 'center',
-        marginTop: 10,
-
-    },
-    footer: {
-        width: 100
     },
 
 });
