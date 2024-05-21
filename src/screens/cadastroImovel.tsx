@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Image, StatusBar, StyleSheet, Text, TextInput, Touchable, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 function CadastroImovel(): React.JSX.Element{
 
@@ -32,7 +33,7 @@ function CadastroImovel(): React.JSX.Element{
             
 
             console.log(formData)
-            const response = await axios.post('http://10.137.11.224:8000/api/clientes', formData, {
+            const response = await axios.post('http://10.137.11.212:8000/api/imovel/criar', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -45,76 +46,66 @@ function CadastroImovel(): React.JSX.Element{
 
     return(
         <View style={styles.container}>
+            <Header />
             <ScrollView showsVerticalScrollIndicator={false}>
-            <StatusBar hidden barStyle={"light-content"} backgroundColor={"black"} />
-            <Image
-                    source={require('../assets/images/logo.png')}
-                    style={styles.logo} />
+            <StatusBar hidden />
 
             <View>
                 
                 <TextInput
                 style={styles.input} 
                 placeholder="Estado" 
-                placeholderTextColor={"#1d1e2c"} 
+                placeholderTextColor={"#7F6A93"} 
                 onChangeText={(texteEstado) => setEstado(texteEstado)}
                 />
                 
                 <TextInput
                 style={styles.input} 
-                placeholder="cidade" 
-                placeholderTextColor={"#1d1e2c"} 
+                placeholder="Cidade" 
+                placeholderTextColor={"#7F6A93"} 
                 onChangeText={(texteCidade) => setCidade(texteCidade)}
-                secureTextEntry
                 />
                 <TextInput
                 style={styles.input} 
                 placeholder="Endereço" 
-                placeholderTextColor={"#1d1e2c"} 
+                placeholderTextColor={"#7F6A93"} 
                 onChangeText={(texteEndereco) => setEndereco(texteEndereco)}
-                secureTextEntry
                 />
                 <TextInput
                 style={styles.input} 
                 placeholder="Tipo do Imóvel" 
-                placeholderTextColor={"#1d1e2c"} 
+                placeholderTextColor={"#7F6A93"} 
                 onChangeText={(texteTipos_imoveis) => setTipos_imoveis(texteTipos_imoveis)}
-                secureTextEntry
                 />
                 <TextInput
                 style={styles.input} 
                 placeholder="Preço" 
-                placeholderTextColor={"#1d1e2c"} 
+                placeholderTextColor={"#7F6A93"} 
                 onChangeText={(textePreco) => setPreco(textePreco)}
-                secureTextEntry
                 />
                 <TextInput
                 style={styles.input} 
                 placeholder="Banheiros" 
-                placeholderTextColor={"#1d1e2c"} 
+                placeholderTextColor={"#7F6A93"} 
                 onChangeText={(texteBanheiros) => setBanheiros(texteBanheiros)}
-                secureTextEntry
                 />
                 <TextInput
                 style={styles.input} 
                 placeholder="Quartos" 
-                placeholderTextColor={"#1d1e2c"} 
+                placeholderTextColor={"#7F6A93"} 
                 onChangeText={(texteQuartos) => setQuartos(texteQuartos)}
-                secureTextEntry
                 />
                 <TextInput
                 style={styles.input} 
                 placeholder="Vagas" 
-                placeholderTextColor={"#1d1e2c"} 
+                placeholderTextColor={"#7F6A93"} 
                 onChangeText={(texteVagas) => setVagas(texteVagas)}
-                secureTextEntry
                 />
                 <TextInput
                 style={styles.input} 
-                placeholder="Area do Imóvel" 
-                placeholderTextColor={"#1d1e2c"} 
+                placeholder="Área do Imóvel" 
+                placeholderTextColor={"#7F6A93"} 
                 onChangeText={(texteArea_do_Imovel) => setArea_do_imovel(texteArea_do_Imovel)}
-                secureTextEntry
                 />
                 </View>
                 <View>
@@ -123,13 +114,11 @@ function CadastroImovel(): React.JSX.Element{
                 onPress={()=>{CadastroScreen()}}>
                     <Text style={styles.buttonText}>Cadastrar</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={styles.forgotPassword}>Cadastre-se!</Text>
-                </TouchableOpacity>
                 </View>
             
             </ScrollView>
             <Footer />
+            
         </View>
         
     );
@@ -140,14 +129,7 @@ const styles =StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f7ebec'
-    },
-    logo: {
-        width: 300,
-        height: 300,
-        marginBottom: -120,
-        marginTop: -69
-        
+        backgroundColor: '#D3D5D4'
     },
     title: {
         fontSize: 25,
@@ -159,14 +141,14 @@ const styles =StyleSheet.create({
     },
     input: {
         borderBottomWidth: 1,
-        borderBottomColor: '#ddbdd5',
+        borderBottomColor: '#A2C5AC',
         height: 40,
         marginBottom: 20,
-        paddingHorizontal: 10,
-        
+        paddingHorizontal: 180,
+        paddingLeft: 1
     },
     button: {
-        backgroundColor: '#ac9fbb',
+        backgroundColor: '#A2C5AC',
         borderRadius: 8,
         height: 40,
 

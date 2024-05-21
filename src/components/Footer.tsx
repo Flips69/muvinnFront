@@ -12,6 +12,10 @@ function Footer(): React.JSX.Element {
                 <Image source={require('../assets/images/muvinn.png')}
                 style={styles.footerIcone} />
             </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('CadastrarImovel')}>
+                <Image source={require('../assets/images/cadastro.png')}
+                style={styles.footerIcone} />
+            </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('List')}>
                 <Image source={require('../assets/images/list.png')}
                 style={styles.footerIcone} />
@@ -26,13 +30,15 @@ function Footer(): React.JSX.Element {
 
 const styles = StyleSheet.create({
     footer: {
-        backgroundColor: '#ddbdd5',
+        backgroundColor: '#9DB5B2',
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'flex-end',
-        paddingVertical: 10,
+        padding: 10,
         width: 390,
-        borderRadius: 10
+        borderTopRightRadius: 10,
+        borderTopLeftRadius: 10,
+        marginTop: 40
     },
     footerIcone: {
         width: 30,
