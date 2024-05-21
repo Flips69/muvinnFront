@@ -10,7 +10,7 @@ function App(): React.JSX.Element {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name='CadastroImovel' component={CadastroImovel}
+                <Stack.Screen name='Muvinn' component={Muvinn}
                 options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>

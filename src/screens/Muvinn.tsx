@@ -8,7 +8,7 @@ function Home() {
   const navigation = useNavigation();
 
   return (
-    <ImageBackground source={require("../assets/images/background1.png")} style={styles.image}>
+    <ImageBackground source={require("../assets/images/background.png")} style={styles.image}>
       <View>
         <Header />
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -27,12 +27,10 @@ function Home() {
 const styles = StyleSheet.create({
   image: {
     flex: 1,
-    resizeMode: "cover",
     justifyContent: "center"
   },
   container: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.4)', // This will make the background darker, so the text is readable
     padding: 20,
     justifyContent: "center"
   },
