@@ -14,7 +14,7 @@ function Home() {
         <ScrollView showsVerticalScrollIndicator={false}>
           <StatusBar hidden/>
           <View style={styles.container}>
-            <Text style={styles.text}></Text>
+            <Text style={styles.textWelcome}>Seja bem-vindo(a)</Text>
             
           </View>
         </ScrollView>
@@ -34,12 +34,12 @@ const styles = StyleSheet.create({
     padding: 20,
     justifyContent: "center"
   },
-  text: {
+  textWelcome: {
     fontWeight: 'bold',
-    color: 'white',
+    color: '#f4f4f6',
     fontSize: 24,
     textAlign: "center",
-    marginBottom: 543
+    marginBottom: 540
   },
 });
 
