@@ -11,7 +11,7 @@ function App(): React.JSX.Element {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name='Muvinn' component={Muvinn}
+                <Stack.Screen name='Listagem' component={Listagem}
                 options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
