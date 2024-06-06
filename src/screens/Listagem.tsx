@@ -19,7 +19,7 @@ import Footer from '../components/Footer';
 const renderItem = ({ item, handleEdit, handleDelete }: { item: Anuncio, handleEdit: (item: Anuncio) => void, handleDelete: (id: string) => void }) => (
   <View style={styles.item}>
     <Card style={{ backgroundColor: '#9999a1' }}>
-      <Card.Title title="Casa rustica " subtitle="Mais informações abaixo" titleStyle={styles.titleColor} subtitleStyle={styles.subtitleColor} />
+      <Card.Title title="Casa rústica " subtitle="Mais informações abaixo" titleStyle={styles.titleColor} subtitleStyle={styles.subtitleColor} />
       <Card.Content>
         <Text style={styles.textTitle}>Estado: {item.estado}</Text>
         <Text style={styles.textTitle}>Cidade: {item.cidade}</Text>
