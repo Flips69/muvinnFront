@@ -13,7 +13,7 @@ interface Props {
 
 const navigation = useNavigation();
 
-function EditarAnuncio({ route }: Props) {
+function EditarImovel({ route }: Props) {
   const { item } = route.params;
   const [estado, setEstado] = useState(item.estado);
   const [cidade, setCidade] = useState(item.cidade);
@@ -197,4 +197,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EditarAnuncio;
+export default EditarImovel;
