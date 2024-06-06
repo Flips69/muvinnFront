@@ -8,7 +8,7 @@ function Footer(): React.JSX.Element {
 
     return (
         <View style={styles.footer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Muvinn')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                 <Image source={require('../assets/images/muvinn.png')}
                 style={styles.footerIcone} />
             </TouchableOpacity>
